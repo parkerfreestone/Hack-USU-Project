@@ -8,19 +8,14 @@ export var gravity := 4500.0
 var velocity := Vector2.ZERO
 
 
-# CONTROL FLOW
 var current_room = 0
-var players_room = 0
+onready var player_node = get_node("Player")
 
-
-func _process(delta: float):
-	playrs_room = get_node("PlayerCharacter").current_room
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 
-
-	if (current_room - players_room) < 3:
-		velocity.x.lerp(
+	if (current_room - player_node.players_room) < 3:
+		print(player_node.get_position_in_parent())
 
 	velocity = move_and_slide(velocity, UP_DIRECTION)
