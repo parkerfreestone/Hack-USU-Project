@@ -15,7 +15,11 @@ var stamina = 100
 export var current_room = 0
 
 func get_input():
+	if stamina < 100:
+		stamina += .5
 	velocity = Vector2()
+
+	print(stamina)
 
 	if moving_left:
 		$Sprite.flip_h = true
@@ -30,15 +34,16 @@ func get_input():
 		velocity.x += ACCELERATION
 		moving_left = false
 		$AnimationPlayer.play("Walk")
-	if Input.is_action_pressed("sprint") && stamina > 20:
+	if Input.is_action_pressed("sprint") && stamina > 17:
 		SPEED = 60
 		stamina -= 1
-		if stamina <= 25:
-			stamina = 0
+		if stamina < 20:
+			stamina = 0;
+			SPEED = 15
+	
 	if Input.is_action_just_released("sprint"):
 		SPEED = 15
-		if stamina <= 99:
-			stamina += 1
+
 	if Input.is_action_pressed("hide"):
 		hidden = true
 		$AnimationPlayer.play("Hide")
