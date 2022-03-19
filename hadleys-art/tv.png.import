@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phoneTablel.png-0dfddcc36529e72f0e6234a41d6a8ee9.stex"
+path="res://.import/tv.png-f0755e941aee273f8bb2d28ded4dd712.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hadleys-art/phoneTablel.png"
-dest_files=[ "res://.import/phoneTablel.png-0dfddcc36529e72f0e6234a41d6a8ee9.stex" ]
+source_file="res://hadleys-art/tv.png"
+dest_files=[ "res://.import/tv.png-f0755e941aee273f8bb2d28ded4dd712.stex" ]
 
 [params]
 
