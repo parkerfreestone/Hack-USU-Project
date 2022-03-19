@@ -25,6 +25,7 @@ func _physics_process(delta):
 
 	if myself:
 		velocity = position.direction_to(myself.position) * SPEED
+		myself.get_child(2).set_color(Color(0.6,0.1,0.2))
 		$AnimationPlayer.play("Running")
 	elif !myself:
 		if wander_state == 2:
@@ -33,12 +34,12 @@ func _physics_process(delta):
 			velocity.x = WANDERING_SPEED
 			$AnimationPlayer.play("Walking")
 			facing_left = true
-			$Area2D/CollisionShape2D.position.x = 87
+			$Area2D/CollisionShape2D.position.x = 136
 		elif wander_state > 2:
 			velocity.x = -WANDERING_SPEED
 			$AnimationPlayer.play("Walking")
 			facing_left = false
-			$Area2D/CollisionShape2D.position.x = -65
+			$Area2D/CollisionShape2D.position.x = -110
 			
 		
 	move_and_slide(velocity, UP_DIRECTION)
@@ -50,6 +51,7 @@ func _on_Area2D_body_entered(body:Node):
 
 func _on_Area2D_body_exited(body:Node):
 	if body.name == "Player":
+		myself.get_child(2).set_color(Color(0.46,0.34,0.62))
 		myself = null
 
 
