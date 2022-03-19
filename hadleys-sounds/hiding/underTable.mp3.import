@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/underTable.mp3-58c60079b331fa7b0b7c48dcb437d64e.mp3str"
+
+[deps]
+
+source_file="res://hadleys-sounds/hiding/underTable.mp3"
+dest_files=[ "res://.import/underTable.mp3-58c60079b331fa7b0b7c48dcb437d64e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
