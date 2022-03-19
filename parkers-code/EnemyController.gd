@@ -1,52 +1,46 @@
 extends KinematicBody2D
 
 # CONSTANTS
-const UP_DIRECTION = Vector2.UP
-const SPEED = 20
+const UP_DIRECTION = Vector2(0, -1)
+const SPEED = 50
 const WANDERING_SPEED = 12
-const GRAVITY = 4500.0
 const ACCELERATION = 1
 
 # VARIBALES
-var random = RandomNumberGenerator.new()
-var walking_time = 0
-
-var velocity = Vector2.ZERO
+var velocity = Vector2()
 var myself = null
 
 var enemy_current_room = 0
 var players_room = 0
-var random_wander = 0
-
-func _ready():
-	random.randomize()
+var wander_state = 0
 
 
 func _physics_process(delta):
-	velocity.y += delta * GRAVITY
-
-	if walking_time >= abs(random_wander):
-		random_wander = random.randi_range(-WANDERING_SPEED, WANDERING_SPEED)
-		walking_time = 0
-
 	if myself:
 		velocity = position.direction_to(myself.position) * SPEED
-	else:
-		walking_time += ACCELERATION
-		if random_wander > 0:
-			velocity.x += ACCELERATION
-		if random_wander < 0:
-			velocity.x += -ACCELERATION
+	elif !myself:
+		if wander_state == 2:
+			velocity.x = 0
+		elif wander_state < 2:
+			velocity.x = WANDERING_SPEED
+			$Sprite.flip_h = true
+		elif wander_state > 2:
+			velocity.x = -WANDERING_SPEED
+			$Sprite.flip_h = false
 
-		# else:
-		# 	break
-		print(random_wander)
+			
 		
-	move_and_slide(velocity)
+	move_and_slide(velocity, UP_DIRECTION)
 		
 
 func _on_Area2D_body_entered(body:Node):
-	myself = body
+	if body.name == "Player":
+		myself = body
 
 func _on_Area2D_body_exited(body:Node):
-	myself = null
+	if body.name == "Player":
+		myself = null
+
+
+func _on_Timer_timeout():
+	wander_state = floor(rand_range(0, 5))

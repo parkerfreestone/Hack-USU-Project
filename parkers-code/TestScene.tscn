@@ -8,16 +8,10 @@
 
 [node name="DiningRoom" parent="." instance=ExtResource( 2 )]
 
-[node name="DiningRoom2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -192, 0 )
-
-[node name="DiningRoom3" parent="." instance=ExtResource( 2 )]
-position = Vector2( -384, 0 )
-
 [node name="MainEnemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 68, 12 )
+position = Vector2( 73, 12 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -124, 7 )
+position = Vector2( -92, 27 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
