@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 const UP_DIRECTION = Vector2.UP
 
 var SPEED = 15
@@ -9,8 +8,6 @@ var ACCELERATION = 1
 
 var velocity = Vector2()
 var moving_left = false
-var hidden = false
-var stamina = 100
 
 export var current_room = 0
 
@@ -29,10 +26,10 @@ func get_input():
 	if Input.is_action_pressed("move_left"):
 		velocity.x += -ACCELERATION
 		moving_left = true
-		$AnimationPlayer.play("Walk")
 	if Input.is_action_pressed("move_right"):
 		velocity.x += ACCELERATION
 		moving_left = false
+<<<<<<< HEAD
 		$AnimationPlayer.play("Walk")
 	if Input.is_action_pressed("sprint") && stamina > 17:
 		SPEED = 60
@@ -53,13 +50,15 @@ func get_input():
 			$AnimationPlayer.play("Idle")
 		elif hidden:
 			$AnimationPlayer.play("Hide")
+=======
+>>>>>>> 61262148a778c38e5106dc06042e9fee7a4ef1f3
 
 	velocity = velocity.normalized() * SPEED
 	
 
 
 func _physics_process(delta):
+
 	get_input()
 	velocity.y += delta * GRAVITY
 	velocity = move_and_slide(velocity, UP_DIRECTION)
-
