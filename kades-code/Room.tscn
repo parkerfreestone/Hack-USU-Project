@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://hadleys-art/floorPlanks.png" type="Texture" id=1]
+[ext_resource path="res://hadleys-art/wallsSprite.png" type="Texture" id=2]
+[ext_resource path="res://hadleys-art/sideWalDoorl.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 2.5 )
@@ -9,39 +11,56 @@ extents = Vector2( 32, 2.5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="Floor1" type="StaticBody2D" parent="ParallaxBackground"]
+[node name="FloorParallax" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Floor1"]
+[node name="Floor1" type="StaticBody2D" parent="ParallaxBackground/FloorParallax"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FloorParallax/Floor1"]
 position = Vector2( -64, 51 )
 texture = ExtResource( 1 )
 vframes = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Floor1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/FloorParallax/Floor1"]
 position = Vector2( -64, 51 )
 shape = SubResource( 1 )
 
-[node name="Floor2" type="StaticBody2D" parent="ParallaxBackground"]
+[node name="Floor2" type="StaticBody2D" parent="ParallaxBackground/FloorParallax"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Floor2"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FloorParallax/Floor2"]
 position = Vector2( 0, 51 )
 texture = ExtResource( 1 )
 vframes = 5
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Floor2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/FloorParallax/Floor2"]
 position = Vector2( 0, 51 )
 shape = SubResource( 1 )
 
-[node name="Floor3" type="StaticBody2D" parent="ParallaxBackground"]
+[node name="Floor3" type="StaticBody2D" parent="ParallaxBackground/FloorParallax"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Floor3"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FloorParallax/Floor3"]
 position = Vector2( 64, 51 )
 texture = ExtResource( 1 )
 vframes = 5
 frame = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Floor3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/FloorParallax/Floor3"]
 position = Vector2( 64, 51 )
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+[node name="WallParallax" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Wall1" type="Sprite" parent="ParallaxBackground/WallParallax"]
+texture = ExtResource( 2 )
+
+[node name="Wall2" type="Sprite" parent="ParallaxBackground/WallParallax"]
+position = Vector2( 64, 0 )
+texture = ExtResource( 2 )
+
+[node name="Wall3" type="Sprite" parent="ParallaxBackground/WallParallax"]
+position = Vector2( -64, 0 )
+texture = ExtResource( 2 )
+
+[node name="SideWallDoor" type="Sprite" parent="ParallaxBackground/WallParallax"]
+position = Vector2( -96, 0 )
+texture = ExtResource( 3 )

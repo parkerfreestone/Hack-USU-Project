@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sideWalDoorl.png-c56e541e1b7d44cd00bce1322cf14120.stex"
+path="res://.import/windowSheet.png-f878842d0dc6188d0d7f09dc3b2748be.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://hadleys-art/sideWalDoorl.png"
-dest_files=[ "res://.import/sideWalDoorl.png-c56e541e1b7d44cd00bce1322cf14120.stex" ]
+source_file="res://hadleys-art/windowSheet.png"
+dest_files=[ "res://.import/windowSheet.png-f878842d0dc6188d0d7f09dc3b2748be.stex" ]
 
 [params]
 
