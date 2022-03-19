@@ -10,8 +10,6 @@ extents = Vector2( 23, 31 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
-speed = null
-gravity = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( -1, 5 )
