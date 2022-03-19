@@ -8,6 +8,15 @@
 
 [node name="DiningRoom" parent="." instance=ExtResource( 2 )]
 
+[node name="DiningRoom2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -192, 0 )
+
+[node name="DiningRoom3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -384, 0 )
+
+[node name="DiningRoom4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 0 )
+
 [node name="MainEnemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 73, 12 )
 
