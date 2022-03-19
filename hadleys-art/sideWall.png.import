@@ -20,7 +20,11 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
+<<<<<<< HEAD
 flags/filter=true
+=======
+flags/filter=false
+>>>>>>> 98c7101872a11a064cfb9b5f4637837df6b95a61
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -31,5 +35,9 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
+<<<<<<< HEAD
 detect_3d=true
+=======
+detect_3d=false
+>>>>>>> 98c7101872a11a064cfb9b5f4637837df6b95a61
 svg/scale=1.0

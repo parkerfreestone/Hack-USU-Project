@@ -11,8 +11,9 @@ config_version=4
 [application]
 
 config/name="Hack- Usu- Project"
-run/main_scene="res://parkers-code/TestScene.tscn"
+run/main_scene="res://kades-code/Room.tscn"
 config/icon="res://icon.png"
+<<<<<<< HEAD
 <<<<<<<HEAD[display]window/size/fullscreen=true
 
 [display]
@@ -24,6 +25,9 @@ window/size/fullscreen=true
 editor=false
 window=false
 displa=false
+=======
+<<<<<<<HEADrun/main_scene="res://kades-code/Room.tscn"
+>>>>>>> 98c7101872a11a064cfb9b5f4637837df6b95a61
 
 [input]
 
