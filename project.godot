@@ -11,7 +11,23 @@ config_version=4
 [application]
 
 config/name="Hack- Usu- Project"
+run/main_scene="res://parkers-code/TestScene.tscn"
 config/icon="res://icon.png"
+<<<<<<<HEAD[display]window/size/fullscreen=true
+
+[autoload]
+
+WorldController="*res://parkers-code/WorldController.gd"
+
+[display]
+
+window/size/fullscreen=true
+
+[global]
+
+editor=false
+window=false
+displa=false
 
 [input]
 
