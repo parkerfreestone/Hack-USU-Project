@@ -12,16 +12,16 @@
 position = Vector2( 1, -2 )
 
 [node name="WallFill" type="Sprite" parent="."]
-position = Vector2( -175, -35 )
+position = Vector2( -174, -38 )
 texture = ExtResource( 3 )
 offset = Vector2( 175, 43 )
 
 [node name="WallFill2" type="Sprite" parent="."]
-position = Vector2( -64, 8 )
+position = Vector2( -63, 5 )
 texture = ExtResource( 3 )
 
 [node name="BrokenWindow" type="Sprite" parent="."]
-position = Vector2( 64, 8 )
+position = Vector2( 65, 8 )
 texture = ExtResource( 2 )
 hframes = 2
 frame = 1
