@@ -8,53 +8,62 @@ extents = Vector2( 32, 2.5 )
 
 [node name="Room" type="Node2D"]
 
-[node name="Wall" type="Sprite" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+motion_offset = Vector2( 12, 0 )
+
+[node name="Wall" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 2 )
 hframes = 3
 
-[node name="Wall2" type="Sprite" parent="."]
+[node name="Wall2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 64, 0 )
 texture = ExtResource( 2 )
 hframes = 3
 frame = 1
 
-[node name="Wall3" type="Sprite" parent="."]
+[node name="Wall3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( -64, 0 )
 texture = ExtResource( 2 )
 hframes = 3
 frame = 1
 
-[node name="Floor1" type="StaticBody2D" parent="."]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = 1
 
-[node name="Sprite" type="Sprite" parent="Floor1"]
+[node name="Floor1" type="StaticBody2D" parent="ParallaxBackground/ParallaxLayer2"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2/Floor1"]
 position = Vector2( -64, 51 )
 texture = ExtResource( 1 )
 vframes = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer2/Floor1"]
 position = Vector2( -64, 51 )
 shape = SubResource( 1 )
 
-[node name="Floor2" type="StaticBody2D" parent="."]
+[node name="Floor2" type="StaticBody2D" parent="ParallaxBackground/ParallaxLayer2"]
 
-[node name="Sprite" type="Sprite" parent="Floor2"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2/Floor2"]
 position = Vector2( 0, 51 )
 texture = ExtResource( 1 )
 vframes = 5
 frame = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer2/Floor2"]
 position = Vector2( 0, 51 )
 shape = SubResource( 1 )
 
-[node name="Floor3" type="StaticBody2D" parent="."]
+[node name="Floor3" type="StaticBody2D" parent="ParallaxBackground/ParallaxLayer2"]
 
-[node name="Sprite" type="Sprite" parent="Floor3"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2/Floor3"]
 position = Vector2( 64, 51 )
 texture = ExtResource( 1 )
 vframes = 5
 frame = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/ParallaxLayer2/Floor3"]
 position = Vector2( 64, 51 )
 shape = SubResource( 1 )
