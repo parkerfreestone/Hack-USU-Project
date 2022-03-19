@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bad-guy.png-c996c0cb22c7f62bc83ba8fdbe0a6576.stex"
+path="res://.import/table.png-38a9f4624047e4e5e0d31639f2dc0ae9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://parkers-code/temp-art/bad-guy.png"
-dest_files=[ "res://.import/bad-guy.png-c996c0cb22c7f62bc83ba8fdbe0a6576.stex" ]
+source_file="res://hadleys-art/table.png"
+dest_files=[ "res://.import/table.png-38a9f4624047e4e5e0d31639f2dc0ae9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/floor.png-e0e1c5a04ec48bccaaa7f8590a8c9cc1.stex"
+path="res://.import/sideWalDoorl.png-c56e541e1b7d44cd00bce1322cf14120.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://parkers-code/temp-art/floor.png"
-dest_files=[ "res://.import/floor.png-e0e1c5a04ec48bccaaa7f8590a8c9cc1.stex" ]
+source_file="res://hadleys-art/sideWalDoorl.png"
+dest_files=[ "res://.import/sideWalDoorl.png-c56e541e1b7d44cd00bce1322cf14120.stex" ]
 
 [params]
 
