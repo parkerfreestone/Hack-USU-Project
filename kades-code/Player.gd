@@ -1,5 +1,4 @@
 extends KinematicBody2D
-signal change_room(room)
 
 const UP_DIRECTION = Vector2.UP
 
@@ -11,9 +10,6 @@ var velocity = Vector2()
 var moving_left = false
 
 export var current_room = 0
-
-func _ready():
-	emit_signal("change_room", 0)
 
 func get_input():
 	velocity = Vector2()
@@ -38,5 +34,4 @@ func _physics_process(delta):
 
 	get_input()
 	velocity.y += delta * GRAVITY
-	
 	velocity = move_and_slide(velocity, UP_DIRECTION)

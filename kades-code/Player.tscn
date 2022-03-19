@@ -17,14 +17,12 @@ texture = ExtResource( 1 )
 position = Vector2( -0.5, 6.5 )
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -30 )
-current = true
-zoom = Vector2( 0.1, 0.1 )
-
-[node name="Light2D" type="Light2D" parent="KinematicBody2D"]
-scale = Vector2( 5.85938, 5.85938 )
+[node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 3 )
-texture_scale = 0.01
-color = Color( 0.933333, 0.870588, 0.705882, 1 )
+texture_scale = 0.1
+color = Color( 0.941176, 0.909804, 0.466667, 1 )
 energy = 0.5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.2, 0.2 )
