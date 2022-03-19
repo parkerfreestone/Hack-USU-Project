@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://kades-code/BrokenWindowHall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://kades-code/StairRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://kades-code/DiningRoom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://kades-code/PhoneHallway.tscn" type="PackedScene" id=4]
+[ext_resource path="res://kades-code/Player.tscn" type="PackedScene" id=5]
+
+[node name="House" type="Node2D"]
+
+[node name="StairRoom" parent="." instance=ExtResource( 2 )]
+position = Vector2( -384, -4 )
+
+[node name="BrokenWindowHall" parent="." instance=ExtResource( 1 )]
+position = Vector2( -193, -2 )
+
+[node name="DiningRoom" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, -4 )
+
+[node name="PhoneHallway" parent="." instance=ExtResource( 4 )]
+position = Vector2( 192, -4 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.027451, 0.00392157, 0.176471, 1 )
