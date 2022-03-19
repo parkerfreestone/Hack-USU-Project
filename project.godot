@@ -11,25 +11,19 @@ config_version=4
 [application]
 
 config/name="Hack USU Project"
+run/main_scene="res://parkers-code/TestScene.tscn"
 config/icon="res://icon.png"
+<<<<<<<HEAD[display]window/size/fullscreen=true
 
-<<<<<<< HEAD
 [display]
 
 window/size/fullscreen=true
 
 [global]
 
-displa=false
-=======
-[global]
-
 editor=false
-<<<<<<< HEAD
 window=false
-=======
->>>>>>> 2e32eb8c1b29fff468f28c33d49bc90201d70cc7
->>>>>>> 63f4c3d17ee307012c2e4f589310a7f2b0c6f6de
+displa=false
 
 [physics]
 
