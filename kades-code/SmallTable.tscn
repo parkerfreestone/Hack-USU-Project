@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://hadleys-art/tableSmall.png" type="Texture" id=1]
+[ext_resource path="res://kades-code/SmallTable.gd" type="Script" id=2]
+[ext_resource path="res://kades-code/lightingdefault.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 12 )
 
 [node name="SmallTable" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 0.820313, 0.820312 )
+texture = ExtResource( 3 )
+texture_scale = 0.05
+color = Color( 0.956863, 0.764706, 0.462745, 1 )
+energy = 0.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 4 )
+shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

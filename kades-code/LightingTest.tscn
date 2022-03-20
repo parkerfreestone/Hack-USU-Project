@@ -15,10 +15,11 @@ position = Vector2( -192, 0 )
 [node name="BrokenWindowHall" parent="." instance=ExtResource( 1 )]
 position = Vector2( 191, 2 )
 
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
 [node name="MainEnemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 223, 12 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.027451, 0.00392157, 0.176471, 1 )
+visible = false
+color = Color( 0.0196078, 0.0117647, 0.0823529, 1 )
