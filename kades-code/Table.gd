@@ -19,8 +19,7 @@ func _ready():
 func _on_Area2D_body_entered(body:Node):
 	if body.name == "Player":
 		body.can_hide = true
-
-	$Light2D.energy = 1
+		$Light2D.energy = 1
 	
 		
 func _on_Area2D_body_exited(body:Node):
