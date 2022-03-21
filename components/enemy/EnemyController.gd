@@ -8,52 +8,61 @@ const ACCELERATION = 1
 
 # VARIBALES
 var velocity = Vector2()
-var myself = null
+var player = null
 var facing_left = false
-
-var enemy_current_room = 0
-var players_room = 0
 var wander_state = 0
+var player_hidden = false
 
-
-func _physics_process(delta):
-
-	if facing_left:
-		$Sprite.flip_h = true
-	elif !facing_left:
-		$Sprite.flip_h = false
-
-	if myself:
-		velocity = position.direction_to(myself.position) * SPEED
-		myself.get_child(2).set_color(Color(0.6,0.1,0.2))
+# RUNS EVERY FRAME
+func _physics_process(_delta):
+	# player IS THE NODE INTERACTING WITH THE ENEMY'S AREA 2D (IN OUR CASE THE PLAYER)
+	if player && !player_hidden:
+		velocity = position.direction_to(player.position) * SPEED
+		player.get_child(2).set_color(Color(0.8,0.1,0.2))
 		$AnimationPlayer.play("Running")
-	elif !myself:
+
+	# RUNS IF THE PLAYER ISN'T COLLIDING WITH THE ENEMY
+	elif !player || player && player_hidden:
+		# WANDER STATE JUST MEANS LEFT, RIGHT, OR STAY STILL
 		if wander_state == 2:
 			velocity.x = 0
 		elif wander_state < 2:
+
+			# SET VELOCITY AND ANIMATION
 			velocity.x = WANDERING_SPEED
 			$AnimationPlayer.play("Walking")
-			facing_left = true
+
+			# FLIP SPRITE AND COLLIDER
+			$Sprite.flip_h = true
 			$Area2D/CollisionShape2D.position.x = 136
 		elif wander_state > 2:
+
+			# SET VELOCITY AND ANIMATION
 			velocity.x = -WANDERING_SPEED
 			$AnimationPlayer.play("Walking")
-			facing_left = false
+
+			# FLIP SPRITE AND COLLIDER
+			$Sprite.flip_h = false
 			$Area2D/CollisionShape2D.position.x = -110
 			
-		
-	move_and_slide(velocity, UP_DIRECTION)
+	# ACTUALLY MOVE OUR ENEMY (Remove velocity re-assignemnt if it doesn't work btw)
+	velocity = move_and_slide(velocity, UP_DIRECTION)
 		
 
+# IS SOMETHING COLLIDING WITH OUR ENEMY?
 func _on_Area2D_body_entered(body:Node):
 	if body.name == "Player":
-		myself = body
+		player = body
 
+# DID SOMETHING STOP COLLIDING WITH OUR ENEMY?
 func _on_Area2D_body_exited(body:Node):
 	if body.name == "Player":
-		myself.get_child(2).set_color(Color(0.46,0.34,0.62))
-		myself = null
+		player = null
 
-
+# SETS THE WANDER TIME OF OUR ENEMY
 func _on_Timer_timeout():
 	wander_state = floor(rand_range(0, 5))
+
+
+func _on_Player_player_hidden(hidden_value):
+	player_hidden = hidden_value

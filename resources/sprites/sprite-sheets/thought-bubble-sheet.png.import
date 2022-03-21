@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/girlSheet.png-41c18bba5dbabc7692bde5dc9b804319.stex"
+path="res://.import/thought-bubble-sheet.png-d92519192153ed953241008cb6796d65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/character-sheets/girlSheet.png"
-dest_files=[ "res://.import/girlSheet.png-41c18bba5dbabc7692bde5dc9b804319.stex" ]
+source_file="res://resources/sprites/sprite-sheets/thought-bubble-sheet.png"
+dest_files=[ "res://.import/thought-bubble-sheet.png-d92519192153ed953241008cb6796d65.stex" ]
 
 [params]
 
