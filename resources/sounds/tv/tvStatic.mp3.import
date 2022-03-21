@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tvStatic.mp3-e0df2c3f83b74144e72be72159f743f1.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/tv/tvStatic.mp3"
+dest_files=[ "res://.import/tvStatic.mp3-e0df2c3f83b74144e72be72159f743f1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

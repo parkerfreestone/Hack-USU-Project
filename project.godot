@@ -11,8 +11,8 @@ config_version=4
 [application]
 
 config/name="Hack- Usu- Project"
-run/main_scene="res://kades-code/House.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://components/rooms/house/House.tscn"
+config/icon="res://resources/sprites/misc/icon.png"
 <<<<<<<HEAD[display]window/size/fullscreen=true
 <<<<<<<HEAD<<<<<<<HEAD[display]window/size/fullscreen=true
 

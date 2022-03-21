@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/underTable.mp3-f397a11ae1fa089b3f8d8e6c6ddfa1b8.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/hiding/underTable.mp3"
+dest_files=[ "res://.import/underTable.mp3-f397a11ae1fa089b3f8d8e6c6ddfa1b8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

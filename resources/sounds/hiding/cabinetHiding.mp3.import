@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cabinetHiding.mp3-60c79c8cb7bf2764641259a9b32bd9bf.mp3str"
+
+[deps]
+
+source_file="res://resources/sounds/hiding/cabinetHiding.mp3"
+dest_files=[ "res://.import/cabinetHiding.mp3-60c79c8cb7bf2764641259a9b32bd9bf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

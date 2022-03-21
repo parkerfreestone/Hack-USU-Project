@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://components/environment-items/SmallTable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/rooms/StairRoom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://components/rooms/house/House.gd" type="Script" id=3]
+[ext_resource path="res://components/rooms/CabinetRoom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/rooms/DiningRoom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/main-ui/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://components/enemy/MainEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://components/rooms/BrokenWindowHall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://components/rooms/PhoneHallway.tscn" type="PackedScene" id=9]
+[ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=10]
+
+[node name="House" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StairRoom" parent="." instance=ExtResource( 2 )]
+position = Vector2( -576, -4 )
+
+[node name="BrokenWindowHall" parent="." instance=ExtResource( 8 )]
+position = Vector2( -193, -2 )
+
+[node name="BrokenWindowHall2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -385, -2 )
+
+[node name="DiningRoom" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -4 )
+
+[node name="PhoneHallway" parent="." instance=ExtResource( 9 )]
+position = Vector2( 192, -4 )
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 384, -4 )
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 0, 28 )
+
+[node name="MainEnemy" parent="." instance=ExtResource( 7 )]
+position = Vector2( 443, 6 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.027451, 0.00392157, 0.176471, 1 )
+
+[node name="HUD" parent="." instance=ExtResource( 6 )]
+margin_left = -775.0
+margin_right = -775.0
+margin_bottom = -44.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SmallTable" parent="." instance=ExtResource( 1 )]
+position = Vector2( 284, 28 )
