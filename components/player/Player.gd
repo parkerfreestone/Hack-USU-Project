@@ -30,12 +30,16 @@ func get_input():
 		velocity.x += -ACCELERATION
 		$Sprite.flip_h = true
 		$AnimationPlayer.play("Walk")
+		if !$AudioStreamPlayer2D.is_playing():
+			$AudioStreamPlayer2D.play()
 
 	# HANDLE RIGHT MOVEMENT (Make sure player isn't is_hidden)
 	if Input.is_action_pressed("move_right") && !is_hidden:
 		velocity.x += ACCELERATION
 		$Sprite.flip_h = false
 		$AnimationPlayer.play("Walk")
+		if !$AudioStreamPlayer2D.is_playing():
+			$AudioStreamPlayer2D.play()
 
 	# HANDLE SPRINTING (Make sure player isn't is_hidden)
 	if Input.is_action_pressed("sprint") && stamina > 17 && !is_hidden:
@@ -81,6 +85,8 @@ func get_input():
 
 	# CHANGE ANIMATION STATE DEPENDING ON X VELOCITY
 	if velocity.x == 0:
+		if $AudioStreamPlayer2D.is_playing():
+			$AudioStreamPlayer2D.stop()
 		if !is_hidden:
 			$AnimationPlayer.play("Idle")
 		elif is_hidden:
