@@ -73,7 +73,7 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="KinematicBody2D"]
-collision_layer = 3
+z_index = 5
 collision_mask = 2
 script = ExtResource( 2 )
 
@@ -94,7 +94,6 @@ energy = 1.2
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -25 )
 current = true
-zoom = Vector2( 0.2, 0.2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Crouch = SubResource( 2 )

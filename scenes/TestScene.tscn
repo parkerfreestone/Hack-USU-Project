@@ -5,6 +5,7 @@
 [node name="TestScene" type="Node2D"]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.972549, 0.972549, 0.972549, 1 )
 
 [node name="Rooms" type="Node2D" parent="."]
 script = ExtResource( 1 )

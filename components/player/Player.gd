@@ -4,7 +4,6 @@ signal player_hidden(hidden_value)
 
 # CONSTANTS
 const UP_DIRECTION = Vector2.UP
-const GRAVITY = 4000
 const ACCELERATION = 1
 
 # VARIABLES
@@ -14,6 +13,7 @@ var stamina = 100
 var is_hidden = false
 var can_hide = false
 var speed = 15
+var gravity = 4000
 
 
 # HANDLE USER INPUT
@@ -61,6 +61,7 @@ func get_input():
 			# CHANGE VARIABLES
 			is_hidden = true
 			speed = 0
+			gravity = 0
 
 			# TELL ENEMY THAT PLAYER IS HIDDEN
 			emit_signal("player_hidden", is_hidden)
@@ -73,6 +74,7 @@ func get_input():
 		# CHANGE VARIABLES
 		is_hidden = false
 		speed = 15
+		gravity = 4000
 
 		# TELL ENEMY THAT PLAYER IS HIDDEN
 		emit_signal("player_hidden", is_hidden)
@@ -86,11 +88,8 @@ func get_input():
 
 	velocity = velocity.normalized() * speed
 
-
-
-
 func _physics_process(delta):
 	get_input()
-	velocity.y += GRAVITY * delta
+	velocity.y += gravity * delta
 
 	velocity = move_and_slide(velocity, UP_DIRECTION)

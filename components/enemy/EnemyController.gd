@@ -3,6 +3,7 @@ extends KinematicBody2D
 # CONSTANTS
 const UP_DIRECTION = Vector2(0, -1)
 const SPEED = 50
+const GRAVITY = 4000
 const WANDERING_SPEED = 12
 const ACCELERATION = 1
 
@@ -14,7 +15,7 @@ var wander_state = 0
 var player_hidden = false
 
 # RUNS EVERY FRAME
-func _physics_process(_delta):
+func _physics_process(delta):
 	# player IS THE NODE INTERACTING WITH THE ENEMY'S AREA 2D (IN OUR CASE THE PLAYER)
 	if player && !player_hidden:
 		velocity = position.direction_to(player.position) * SPEED
@@ -44,7 +45,10 @@ func _physics_process(_delta):
 			# FLIP SPRITE AND COLLIDER
 			$Sprite.flip_h = false
 			$Area2D/CollisionShape2D.position.x = -110
-			
+	
+	# GIVE OUR ENEMY GRAVITY
+	velocity.y += GRAVITY * delta
+
 	# ACTUALLY MOVE OUR ENEMY (Remove velocity re-assignemnt if it doesn't work btw)
 	velocity = move_and_slide(velocity, UP_DIRECTION)
 		
